@@ -60,11 +60,13 @@ git log --oneline
 
 # Use the 7 digit SHA as the tag of your new release. Never use latest.
 # Replace REPOSITORY with the name of your repository.
-docker build -t ghcr.io/flashflashrevolution/REPOSITORY/web:SHA .
+docker build -t ghcr.io/flashflashrevolution/REPOSITORY:SHA .
 
 # Double check that you've named it and tagged it correctly.
 docker images
 
 # Push the new image using the exact string as you had before.
-docker push ghcr.io/flashflashrevolution/REPOSITORY/web:sha-SHA
+docker push ghcr.io/flashflashrevolution/REPOSITORY:sha-SHA
 ```
+
+> Note: Add additional identifiers after REPOSITORY, with a - (myrepo-special), though this will rarely be necessary as there should only be one publishable Dockerfile per repository, and you should be using tags for that.
